@@ -1,6 +1,4 @@
 // Carregando o gulp e os plugins através da função `require` do nodejs
-// const gulp = require('gulp');
-
 var gulp        = require('gulp');
 var browserSync = require('browser-sync').create();
 
