@@ -1,4 +1,7 @@
+# ignore these folders
 node_modules/
-package-lock.json
 platforms/
 plugins/
+
+# ignore these files
+package-lock.json
