@@ -1,14 +1,29 @@
-<mvc:View
-	controllerName="sap.ui.demo.basicTemplate.controller.App"
-	xmlns:mvc="sap.ui.core.mvc"
-	displayBlock="true"
+<mvc:View 
+	controllerName="sap.ui.demo.basicTemplate.controller.App" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	displayBlock="true" 
 	xmlns="sap.m">
 	<App>
 		<pages>
-			<Page
-				id="page"
-				title="{i18n>title}">
-				<content></content>
+			<Page id="page" title="{i18n>title}">
+				<content>
+					<List 
+						headerText="Products" 
+						items="{/ProductCollection}">
+						<StandardListItem 
+							title="{Name}" 
+							description="{ProductId}" 
+							icon="{ProductPicUrl}" 
+							iconDensityAware="false" 
+							iconInset="false" />
+						<swipeContent>
+							<Button 
+								text="Delete Item" 
+								type="Reject" 
+								press="handleReject" />
+						</swipeContent>
+					</List>
+				</content>
 			</Page>
 		</pages>
 	</App>

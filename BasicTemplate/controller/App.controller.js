@@ -1,12 +1,16 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function(Controller) {
-	"use strict";
+	'jquery.sap.global',
+	'sap/ui/core/mvc/Controller',
+	'sap/ui/model/json/JSONModel'
+], function (jQuery, Controller, JSONModel) {
+	'use strict';
 
-	return Controller.extend("sap.ui.demo.basicTemplate.controller.App", {
+	return Controller.extend('sap.ui.demo.basicTemplate.controller.App', {
 
-		onInit: function () {
-
+		onInit: function (evt) {
+			// set explored app's demo model on this sample
+			var oModel = new JSONModel(jQuery.sap.getModulePath('sap.ui.demo.basicTemplate.mock', '/products.json'));
+			this.getView().setModel(oModel);
 		}
 	});
 });
